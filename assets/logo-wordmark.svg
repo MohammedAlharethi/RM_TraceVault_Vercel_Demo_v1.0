@@ -1,20 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 132" role="img" aria-labelledby="title desc">
-  <title id="title">RM TraceVault</title>
-  <desc id="desc">Official RM TraceVault wordmark with Secure Trace Protect tagline</desc>
-  <defs>
-    <linearGradient id="g" x1="12" y1="10" x2="118" y2="122" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2A7FFF"/>
-      <stop offset="1" stop-color="#0B4DBC"/>
-    </linearGradient>
-  </defs>
-  <g transform="translate(4 4)">
-    <rect x="8" y="8" width="108" height="108" rx="28" fill="#061327"/>
-    <path d="M33 57V47c0-16 12.8-28 29-28s29 12 29 28v10" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
-    <rect x="24" y="52" width="76" height="58" rx="18" fill="url(#g)"/>
-    <path d="M40 88V69h10l8 9.2L66 69h9.7v19h-8V79l-9 10h-1.2l-9.1-10v9H40Z" fill="#fff"/>
-    <circle cx="86" cy="81" r="7" fill="#061327"/>
-  </g>
-  <text x="144" y="65" fill="#061327" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1.4">RM Trace</text>
-  <text x="367" y="65" fill="#1268E8" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1.4">Vault</text>
-  <text x="147" y="98" fill="#4C5E78" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4.1">SECURE · TRACE · PROTECT</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-label="RM TraceVault">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e78ff"/><stop offset="1" stop-color="#64c7ff"/></linearGradient></defs>
+<g transform="translate(0,0)">
+<path d="M18 45V30C18 13.4 31.4 0 48 0s30 13.4 30 30v15" fill="none" stroke="#07152d" stroke-width="12" stroke-linecap="round"/>
+<rect x="5" y="38" width="86" height="70" rx="20" fill="#07152d"/>
+<rect x="11" y="44" width="74" height="58" rx="15" fill="url(#g)" opacity=".2"/>
+<path d="M23 82V58h12l13 17 13-17h12v24H61V69L48 86 35 69v13H23Z" fill="#fff"/>
+<circle cx="48" cy="93" r="4" fill="#65d8ff"/>
+</g>
+<text x="112" y="54" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800" fill="#07152d" letter-spacing="-1.2">RM TRACEVAULT</text>
+<text x="114" y="84" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1e78ff" letter-spacing="4.5">SECURE · TRACE · PROTECT</text>
 </svg>

@@ -1,18 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
-  <title id="title">RM TraceVault</title>
-  <desc id="desc">RM monogram inside a secure vault mark</desc>
-  <defs>
-    <linearGradient id="g" x1="18" y1="16" x2="110" y2="116" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2A7FFF"/>
-      <stop offset="1" stop-color="#0B4DBC"/>
-    </linearGradient>
-    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#07152D" flood-opacity=".22"/>
-    </filter>
-  </defs>
-  <rect x="12" y="12" width="104" height="104" rx="28" fill="#061327" filter="url(#s)"/>
-  <path d="M36 55V45c0-16 12.5-28 28-28s28 12 28 28v10" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
-  <rect x="26" y="50" width="76" height="58" rx="18" fill="url(#g)"/>
-  <path d="M43 86V67h9.8l7.8 9 7.8-9H78v19h-8V77l-8.8 10h-1.3L51 77v9h-8Z" fill="#fff"/>
-  <circle cx="88" cy="79" r="7" fill="#061327" opacity=".95"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 112" role="img" aria-label="RM TraceVault">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e78ff"/><stop offset="1" stop-color="#64c7ff"/></linearGradient></defs>
+<path d="M18 45V30C18 13.4 31.4 0 48 0s30 13.4 30 30v15" fill="none" stroke="#07152d" stroke-width="12" stroke-linecap="round"/>
+<rect x="5" y="38" width="86" height="70" rx="20" fill="#07152d"/>
+<rect x="11" y="44" width="74" height="58" rx="15" fill="url(#g)" opacity=".18"/>
+<path d="M23 82V58h12l13 17 13-17h12v24H61V69L48 86 35 69v13H23Z" fill="#fff"/>
+<circle cx="48" cy="93" r="4" fill="#65d8ff"/>
 </svg>
