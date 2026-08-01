@@ -1,0 +1,13 @@
+{
+  "name": "rm-tracevault-concept-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive static proof-of-concept demo for RM TraceVault.",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "start": "node serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
