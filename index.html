@@ -19,6 +19,16 @@
   <div id="modal-root"></div>
   <div id="toast-root" class="toast-root" aria-live="polite"></div>
   <script src="data.js"></script>
+  <script>
+    (() => {
+      const nativeOpen = window.open.bind(window);
+      window.open = (url, target) => {
+        const child = nativeOpen(url, target);
+        if (child) child.opener = null;
+        return child;
+      };
+    })();
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
