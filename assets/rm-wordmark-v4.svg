@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" role="img" aria-labelledby="title desc">
+  <title id="title">RM TraceVault</title>
+  <desc id="desc">RM monogram with RM TraceVault wordmark and Trace Secure Preserve tagline.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071327"/><stop offset="1" stop-color="#0a1730"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b57d0"/><stop offset="1" stop-color="#2386ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="150" height="150" rx="18" fill="url(#bg)"/>
+  <path fill="#fff" d="M28 50h43c16 0 26 9 26 23 0 12-7 20-19 23l20 27H79L61 98H45v25H28V77h43c6 0 10-3 10-8s-4-8-10-8H35L28 50Z"/>
+  <path fill="url(#blue)" d="M81 72l14 15 26-29v65h-15V91L95 103 71 76l10-12v8Z"/>
+  <text x="180" y="70" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800" fill="#071327" letter-spacing="-1.5">RM TRACEVAULT</text>
+  <text x="183" y="104" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#176ee8" letter-spacing="5">TRACE. SECURE. PRESERVE.</text>
+</svg>
