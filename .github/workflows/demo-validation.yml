@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - enterprise-ui-v4
+      - fix-v4-audit
 
 permissions:
   contents: read
@@ -22,9 +22,8 @@ jobs:
         run: |
           node --check data.js
           node --check app.js
-          node --check v4-enhancements.js
           node --check validate-v4.js
-      - name: Runtime and PDF validation
+      - name: Runtime, typography, RTL and certificate validation
         run: node validate-v4.js
       - name: Public-safe content scan
         run: |

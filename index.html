@@ -1,15 +1,17 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#07152d" />
-  <meta name="description" content="RM TraceVault enterprise technical demonstration for sovereign digital evidence custody, integrity verification and chain of custody." />
-  <meta name="robots" content="noindex,nofollow,noarchive" />
-  <link rel="icon" href="assets/rm-logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="v4.css" />
-  <title>RM TraceVault — Enterprise Technical Demo v4</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07152d">
+  <meta name="description" content="RM TraceVault enterprise concept demonstration for sovereign digital evidence custody, integrity verification and chain of custody.">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="assets/rm-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <title>RM TraceVault — Enterprise Demo</title>
 </head>
 <body>
   <noscript>This interactive concept demonstration requires JavaScript.</noscript>
@@ -17,7 +19,16 @@
   <div id="modal-root"></div>
   <div id="toast-root" class="toast-root" aria-live="polite"></div>
   <script src="data.js"></script>
+  <script>
+    (() => {
+      const nativeOpen = window.open.bind(window);
+      window.open = (url, target) => {
+        const child = nativeOpen(url, target);
+        if (child) child.opener = null;
+        return child;
+      };
+    })();
+  </script>
   <script src="app.js"></script>
-  <script src="v4-enhancements.js"></script>
 </body>
 </html>

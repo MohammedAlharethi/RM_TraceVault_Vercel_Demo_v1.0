@@ -1,3 +1,4 @@
+// RM TraceVault public concept-demo data. All organizations, people, cases and evidence records are fictional.
 window.TRACEVAULT_DEMO = {
   product: {
     name: "RM TraceVault",
@@ -6,8 +7,7 @@ window.TRACEVAULT_DEMO = {
     pillars: ["WHO", "WHEN", "WHAT", "INTEGRITY", "IMMUTABILITY"],
     environment: "Public Concept Demonstration",
     region: "Saudi Arabia",
-    domain: "tracevault.sa",
-    version: "Enterprise Demo 3.0"
+    domain: "tracevault.sa"
   },
   tenant: {
     id: "TEN-DEMO-ALPHA",
@@ -23,6 +23,7 @@ window.TRACEVAULT_DEMO = {
     legalHolds: 31,
     pendingExports: 4
   },
+  // Generated SHA-512 demonstration values. Each value is exactly 128 hexadecimal characters.
   evidence: [
     {
       id: "EV-DEMO-0001",
@@ -37,11 +38,13 @@ window.TRACEVAULT_DEMO = {
       collected: "30 Jul 2026, 14:32 AST",
       ingested: "30 Jul 2026, 14:33 AST",
       verified: "30 Jul 2026, 14:34 AST",
-      hash: "9f7b2c6e2e1a8f0b4c6d9e7f3a7c2d6f1b3e9a8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0",
+      hash: "e5ae4b21bb644b8df471aed86d04aecb4bad7f180337ac6d1d0c7cb909b06604eec5e7d34fcbb81809045efda8ad2a85945df2dc3dca512595c2cda1b793e557",
       encryption: "AES-256-GCM / 64 MiB chunks",
       worm: "Object Lock — Compliance Mode",
       integrity: "Verified",
       signature: "Ed25519 custody signature valid",
+      timestamp: "RFC 3161 token simulated",
+      version: "v1 — immutable original",
       legalHold: true,
       retention: "30 Jul 2033",
       actor: "Demo Investigator A",
@@ -71,11 +74,13 @@ window.TRACEVAULT_DEMO = {
       collected: "30 Jul 2026, 11:05 AST",
       ingested: "30 Jul 2026, 11:09 AST",
       verified: "30 Jul 2026, 11:12 AST",
-      hash: "8d67f7a823c91e6a3f2d1847c0b9e5f6328a4d9f7b3e1c5a0d8f9b2c6a3e7d4f8c1a9b5e3d7f2a4c6e8b0d1f3a5c7e9b2d4f6a8c0e1b3d5f7a9c2e4b6d8",
+      hash: "ae4f660da3f72be5d9f41e5b2a2d2ad81bee7bba65d69ec60efa694c17dd7c36646741613cd3b1d3b16601c16e709e00f81c79862f78ddf4981aafd4df597f59",
       encryption: "AES-256-GCM / 64 MiB chunks",
       worm: "Object Lock — Compliance Mode",
       integrity: "Verified",
       signature: "Ed25519 custody signature valid",
+      timestamp: "RFC 3161 token simulated",
+      version: "v1 — immutable original",
       legalHold: true,
       retention: "30 Jul 2033",
       actor: "Demo Investigator B",
@@ -103,11 +108,13 @@ window.TRACEVAULT_DEMO = {
       collected: "29 Jul 2026, 09:44 AST",
       ingested: "29 Jul 2026, 09:45 AST",
       verified: "29 Jul 2026, 09:45 AST",
-      hash: "78fac1e9b3d57a9c2e4b6d8f0a1c3e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6a8c0e1b3d5f7a9c2e4b6d8f0a1c3e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6a8c",
+      hash: "b184cf91c80f7a4275cc4f2051e175935ac099f04d553d1cb0b48759ad75adf2e402419f4f2426922e67759d259ab1e8657acc094630c76298302ab1c3c0dac4",
       encryption: "AES-256-GCM / 64 MiB chunks",
       worm: "Object Lock — Compliance Mode",
       integrity: "Verified",
       signature: "Ed25519 custody signature valid",
+      timestamp: "RFC 3161 token simulated",
+      version: "v1 — immutable original",
       legalHold: false,
       retention: "29 Jul 2031",
       actor: "Demo Investigator C",
@@ -134,11 +141,13 @@ window.TRACEVAULT_DEMO = {
       collected: "29 Jul 2026, 08:15 AST",
       ingested: "29 Jul 2026, 08:15 AST",
       verified: "29 Jul 2026, 08:16 AST",
-      hash: "3a91b7d20f4c6e8a1b3d5f7c9e2a4b6d8f0c1e3a5b7d9f2c4e6a8b0d1f3c5e7a9b2d4f6c8e0a1b3d5f7c9e2a4b6d8f0c1e3a5b7d9f2c4e6a8b0d1f3c5e7a9b",
+      hash: "6e5054db1bd72b91f7b6877e697cb975c665c4182a797547aa2999ee605ac45f5f276b6203a3e3aa087173e5edf983d75e722ea5d73233051ebe672204b7b39c",
       encryption: "AES-256-GCM / 64 MiB chunks",
       worm: "Object Lock — Compliance Mode",
       integrity: "Verified",
       signature: "Ed25519 custody signature valid",
+      timestamp: "RFC 3161 token simulated",
+      version: "v1 — immutable original",
       legalHold: false,
       retention: "29 Jul 2031",
       actor: "Secure Connector Service",
@@ -164,11 +173,13 @@ window.TRACEVAULT_DEMO = {
       collected: "28 Jul 2026, 16:02 AST",
       ingested: "28 Jul 2026, 16:19 AST",
       verified: "28 Jul 2026, 16:21 AST",
-      hash: "9c12aa783e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6a8c0e1b3d5f7a9c2e4b6d8f0a1c3e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6a8c0e1b3d5f7a9c2e4b6",
+      hash: "884d08338d60554ee106a7d9ee7da26badb2c122fc1475d1638ed2c4dcd3663f939116191e571a7bce24f2fd8ef51d17096cc9195f82634378500380ab89135d",
       encryption: "AES-256-GCM / 64 MiB chunks",
       worm: "Object Lock — Compliance Mode",
       integrity: "Verified",
       signature: "Ed25519 custody signature valid",
+      timestamp: "RFC 3161 token simulated",
+      version: "v1 — immutable original",
       legalHold: true,
       retention: "28 Jul 2036",
       actor: "Demo Forensic Examiner",
@@ -225,8 +236,60 @@ window.TRACEVAULT_DEMO = {
   ],
   editions: [
     { name: "Evidence Vault", label: "Foundation", description: "Core evidence preservation, integrity verification and custody timeline.", features: ["Immutable evidence preservation", "SHA-512 verification", "Chain of custody", "Core technical export", "Tenant RBAC"] },
-    { name: "Evidence Trust", label: "Professional", description: "Advanced investigation, legal hold, SSO and offline verification workflows.", features: ["Everything in Evidence Vault", "Case Workspace", "Legal Hold", "Enterprise SSO", "Offline verification", "Advanced reporting"] },
+    { name: "Evidence Trust", label: "Professional", description: "Advanced investigation, Legal Hold, SSO and offline verification workflows.", features: ["Everything in Evidence Vault", "Case Workspace", "Legal Hold", "Enterprise SSO", "Offline verification", "Advanced reporting"] },
     { name: "Sovereign Enterprise", label: "Regulated", description: "Enhanced governance and sovereign controls for regulated organizations.", features: ["Everything in Evidence Trust", "Advanced key custody", "Private connectivity option", "Service governance", "Custom integrations", "Enhanced support model"] },
     { name: "Strategic Dedicated", label: "Mission Critical", description: "Dedicated architecture options for strategic and large-scale workloads.", features: ["Dedicated isolation options", "Custom custody model", "Custom recovery design", "Named service team", "Executive governance", "Custom acceptance plan"] }
-  ]
+  ],
+  technical: {
+    endpoints: [
+      ["POST", "/api/v1/evidence/upload/init", "Initiate tenant-bound resumable upload", { session_id: "UP-DEMO-8C0F", chunk_size_bytes: 67108864, max_object_bytes: 50000000000, status: "READY" }],
+      ["POST", "/api/v1/evidence/upload/{session}/finalize", "Encrypt, commit under WORM, timestamp and verify", { evidence_id: "EV-DEMO-0099", profile: "TV-ENC-001-A-v1.0", worm: "COMPLIANCE", integrity: "SHA-512 VERIFIED" }],
+      ["GET", "/api/v1/evidence/{id}/download", "Authorized tenant-bound decrypted stream", { status: "AUTHORIZED_STREAM", audit_event: "AUD-DEMO-8821" }],
+      ["POST", "/api/v1/evidence/{id}/presigned-url", "Create TTL-bound read-only access URL", { ttl_seconds: 300, access: "READ_ONLY", audit_event: "AUD-DEMO-8822" }],
+      ["POST", "/api/v1/evidence/{id}/evidence-package", "Generate portable technical evidence package", { package_id: "EXP-DEMO-0021", manifest: "INCLUDED", custody_report: "INCLUDED", status: "VERIFICATION_READY" }],
+      ["GET", "/api/v1/integrity/{id}/verify", "Verify SHA-512, timestamp and custody signatures", { sha512: "MATCH", timestamp_token: "VALID", custody_signatures: "VALID", result: "VERIFIED" }],
+      ["GET", "/api/v1/integrity/{id}/chain", "Return append-only chain of custody", { events: 7, hash_chain: "VALID", signature_profile: "Ed25519" }],
+      ["GET", "/api/v1/audit/events", "Query tenant-filtered audit events", { page: 1, page_size: 50, total: 28431, authorization_filter: "ENFORCED" }],
+      ["POST", "/api/v1/tenants", "Create tenant through an admin workflow", { tenant_id: "TEN-DEMO-BRAVO", status: "PENDING_POLICY_APPROVAL" }],
+      ["POST", "/api/v1/tenants/{id}/data-subject-request", "Route privacy request to legal/retention review", { request_id: "DSR-DEMO-0142", status: "LEGAL_REVIEW_REQUIRED", automatic_deletion: false }],
+      ["GET", "/api/v1/auth/oidc/{tenant}/login", "Start tenant-aware OIDC / enterprise SSO", { tenant_context: "BOUND", mfa_policy: "REQUIRED" }]
+    ],
+    tests: [
+      ["tenant", "Cross-tenant evidence access", "Use a valid identity from another tenant", "TV-TENANT-403", "HTTP 403 — Forbidden", "Tenant context, database policy and cryptographic namespace did not match. No evidence metadata was disclosed."],
+      ["missing", "Missing encrypted chunk", "Remove one authenticated chunk", "ENC-6A", "VERIFICATION FAILED", "Expected chunk count and whole-evidence SHA-512 did not match. Evidence was not accepted."],
+      ["reorder", "Reordered encrypted chunks", "Change the order of two 64 MiB chunks", "ENC-6B", "AUTHENTICATION FAILED", "Chunk index and authenticated sequence validation failed."],
+      ["substitute", "Cross-evidence substitution", "Insert a chunk from another evidence ID", "ENC-6C", "AAD CONTEXT MISMATCH", "Tenant ID, evidence ID and chunk context did not match the authenticated envelope."],
+      ["unwrap", "Unauthorized Vault Transit unwrap", "Use an unapproved workload identity", "TV-VAULT-403", "POLICY DENIED", "The workload identity had no unwrap authority for the tenant namespace and key version."],
+      ["expired", "Expired evidence access URL", "Use a TTL-bound URL after expiry", "TV-ACCESS-401", "HTTP 401 — Expired", "The signed grant expired. A new authorized workflow and audit event are required."]
+    ],
+    domains: [
+      ["lock", "Immutable Evidence Preservation", "Compliance-mode retention, versioning, access logging and explicit delete/modify rejection.", ["WORM / Object Lock", "Version history", "Legal Hold protection", "Blocked bypass attempts"], "Simulated"],
+      ["key", "Provider-Separated Encryption", "Per-evidence envelope encryption with tenant-bound Vault Transit protection.", ["AES-256-GCM", "64 MiB authenticated chunks", "Wrapped DEK", "KMS root / Vault separation"], "Detailed"],
+      ["fingerprint", "Integrity & Time Provenance", "Deterministic verification of the complete original evidence stream.", ["SHA-512", "RFC 3161 token", "Ed25519 custody signing", "Offline verification"], "Simulated"],
+      ["building", "Tenant Isolation", "Tenant context across identity, database policy, cryptographic namespace and exports.", ["Schema-per-tenant", "Row-Level Security", "Authorization filtering", "Negative tests"], "Simulated"],
+      ["link", "Chain of Custody", "Append-only actor, action, time, reason and integrity references.", ["Signed events", "Tamper-evident ordering", "Legal Hold actions", "Export lineage"], "Detailed"],
+      ["globe", "Saudi Sovereign Boundary", "Target Saudi residency for evidence, data-bearing logs, backups and derived content.", ["Private service paths", "Region controls", "Controlled administration", "Residency evidence"], "Acceptance-gated"],
+      ["code", "Application & Integration APIs", "Versioned interfaces for upload, retrieval, verification, custody and privacy.", ["Resumable upload", "S3-compatible intake", "OIDC / M2M", "HLS/DASH retrieval"], "Interactive"],
+      ["activity", "Security Operations", "Coordinated incident command, telemetry, evidence preservation and recovery.", ["One incident timeline", "Crypto escalation", "Restore evidence", "Release rollback"], "Interactive"],
+      ["sparkles", "AI-Derived Analysis", "Phase 2 OCR, PII, classification and semantic search remain derived analysis.", ["Run provenance", "Human review", "Tenant-aware indexes", "No authority transfer"], "Phase 2"]
+    ],
+    aiRun: {
+      analysis_run_id: "AIRUN-DEMO-20260802-0047",
+      tenant_id: "TEN-DEMO-ALPHA",
+      evidence_id: "EV-DEMO-0003",
+      feature_id: "F-150 / F-151 / F-152 / F-153",
+      model_profile: "rm-demo-ar-en-doc-v0.4",
+      model_version: "2026.08-demo",
+      environment: "PUBLIC-CONCEPT-DEMO",
+      application_build: "demo-current",
+      status: "COMPLETED",
+      reviewer_status: "PENDING HUMAN REVIEW"
+    },
+    securityEvents: [
+      ["11:04", "Blocked evidence deletion", "TV-WORM-403"],
+      ["10:16", "Cross-tenant request denied", "TV-TENANT-403"],
+      ["09:44", "Vault unwrap policy denied", "TV-VAULT-403"],
+      ["08:30", "Restore verification passed", "RECOVERY-VERIFIED"]
+    ]
+  }
 };
