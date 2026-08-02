@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">RM TraceVault logo</title>
+  <desc id="desc">White R and blue M monogram on a deep navy square.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071327"/>
+      <stop offset="1" stop-color="#0a1730"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b57d0"/>
+      <stop offset="1" stop-color="#2386ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="4" fill="url(#bg)"/>
+  <path fill="#fff" d="M58 99h86c31 0 51 18 51 46 0 23-14 39-37 44l39 53h-37l-36-49H92v49H58v-91h85c12 0 19-6 19-16s-7-16-19-16H72L58 99Z"/>
+  <path fill="url(#blue)" d="M163 142l27 29 51-57v128h-30v-64l-21 24-48-53 21-23v16Z"/>
+</svg>
