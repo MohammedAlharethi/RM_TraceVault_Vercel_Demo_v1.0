@@ -11,6 +11,7 @@ const sandbox = {
   CSS: { escape: value => String(value) },
   setTimeout(){ return 0; },
   clearTimeout(){},
+  addEventListener(){},
   MutationObserver: class { observe(){} },
   document: {
     documentElement: { lang: 'en', dir: 'ltr' },
