@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="RM TraceVault logo">
+  <defs>
+    <linearGradient id="rmBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f86ff"/>
+      <stop offset="1" stop-color="#0758d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="0" fill="#071225"/>
+  <path fill="#ffffff" d="M58 99h89c31 0 52 21 52 50 0 24-15 42-38 48l35 48h-41l-31-44H91v44H58V99zm33 31v40h55c13 0 21-8 21-20 0-12-8-20-21-20H91z"/>
+  <path fill="url(#rmBlue)" d="M159 151l27 28 55-72v138h-32v-66l-23 30-49-49 22-9z"/>
+</svg>
