@@ -1,0 +1,31 @@
+name: Demo Validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - enterprise-ui-v4
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check data.js
+          node --check app.js
+          node --check v4-enhancements.js
+          node --check validate-v4.js
+      - name: Runtime and PDF validation
+        run: node validate-v4.js
+      - name: Public-safe content scan
+        run: |
+          ! grep -RniE 'MohammedAlharethi|aljeri\.com|3,160,228|6,088,968|243,529|SCCC-2465' --include='*.html' --include='*.js' --include='*.css' --include='*.svg' .
