@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - fix-v4-audit
+      - feature-ai-development-governance
 
 permissions:
   contents: read
@@ -22,9 +23,13 @@ jobs:
         run: |
           node --check data.js
           node --check app.js
+          node --check ai-governance.js
           node --check validate-v4.js
+          node --check validate-ai-governance.js
       - name: Runtime, typography, RTL and certificate validation
         run: node validate-v4.js
+      - name: AI development governance validation
+        run: node validate-ai-governance.js
       - name: Public-safe content scan
         run: |
-          ! grep -RniE 'MohammedAlharethi|aljeri\.com|3,160,228|6,088,968|243,529|SCCC-2465' --include='*.html' --include='*.js' --include='*.css' --include='*.svg' .
+          ! grep -RniE 'MohammedAlharethi|aljeri\.com|3,160,228|6,088,968|243,529|SCCC-2465|VirtusLab|visdom-ai|tracevault\.dev' --include='*.html' --include='*.js' --include='*.css' --include='*.svg' --exclude='validate-*.js' .
