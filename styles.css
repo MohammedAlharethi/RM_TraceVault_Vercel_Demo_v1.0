@@ -31,3 +31,5 @@
    Without this, "30 Jul 2033" renders as "Jul 2033 30" and "2.41 GB" as "GB 2.41". */
 html[dir="rtl"] td,html[dir="rtl"] td *,html[dir="rtl"] .badge,html[dir="rtl"] .kpi-delta,html[dir="rtl"] .activity-time,html[dir="rtl"] .timeline-signature,html[dir="rtl"] .result-field strong,html[dir="rtl"] .certificate-field strong,html[dir="rtl"] .kpi > strong,html[dir="rtl"] .legend-item span,html[dir="rtl"] .donut-value span{unicode-bidi:plaintext}
 html[dir="rtl"] td,html[dir="rtl"] .result-field strong,html[dir="rtl"] .certificate-field strong,html[dir="rtl"] .kpi > strong{text-align:right}
+/* Mid widths (sidebar still visible): the top bar ran ~110px past the window at about 820-1150px wide */
+@media(max-width:1180px){.user-copy{display:none}.tenant-copy small{display:none}.topbar{padding-inline:18px;gap:12px}.top-left,.tenant-copy{min-width:0}.tenant-copy strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
