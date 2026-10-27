@@ -122,3 +122,5 @@
 @media(max-width:1240px){.aig-hero,.aig-layout,.aig-package{grid-template-columns:1fr}.aig-hero-visual{grid-template-columns:repeat(2,1fr)}.aig-policy-grid{grid-template-columns:repeat(2,1fr)}.aig-roadmap{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:820px){.aig-disclaimer{grid-template-columns:auto 1fr}.aig-disclaimer .badge{grid-column:1/-1;justify-self:start}.aig-hero{padding:24px 20px}.aig-hero h1{font-size:30px}.aig-hero-visual,.aig-kpis,.aig-policy-grid,.aig-roadmap{grid-template-columns:1fr}.aig-code-mix{grid-template-columns:1fr}.aig-flow{grid-template-columns:repeat(2,1fr)}.aig-flow-step:nth-child(3n):after{display:block}.aig-flow-step:nth-child(2n):after,.aig-flow-step:last-child:after{display:none}.aig-teaser-head{flex-direction:column}}
 @media(max-width:520px){.aig-hero h1{font-size:27px}.aig-meta,.aig-package-fields,.aig-flow{grid-template-columns:1fr}.aig-flow-step:after{display:none}.aig-trust-flow{grid-template-columns:1fr}.aig-kpis{grid-template-columns:1fr 1fr}.aig-nav-tag{display:none}}
+
+.aig-eyebrow svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex:none}

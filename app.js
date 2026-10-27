@@ -383,7 +383,8 @@
 
   function editionsPage() {
     return shell(`${pageHeader("SERVICE CATALOGUE", t("editions"), isArabic() ? "إصدارات خدمة توضح نطاق المزايا دون عرض أسعار أو شروط تجارية حساسة." : "Service editions illustrating capability scope without exposing confidential pricing or commercial terms.", button(isArabic() ? "طلب عرض تجريبي" : "Request a private demonstration", "contact", "primary", "play"))}
-      <section class="edition-grid">${D.editions.map(edition => `<article class="edition"><span class="edition-label">${esc(edition.label)}</span><h3>${esc(edition.name)}</h3><p>${esc(edition.description)}</p><div class="feature-list">${edition.features.map(feature => `<div class="feature">${icon("check")}<span>${esc(feature)}</span></div>`).join("")}</div></article>`).join("")}</section>`, "editions");
+      <section class="edition-grid">${D.editions.map(edition => `<article class="edition"><span class="edition-label">${esc(isArabic() ? edition.labelAr : edition.label)}</span><h3>${esc(edition.name)}</h3><p>${esc(isArabic() ? edition.descriptionAr : edition.description)}</p><div class="feature-list">${(isArabic() ? edition.featuresAr : edition.features).map(feature => `<div class="feature">${icon("check")}<span>${esc(feature)}</span></div>`).join("")}</div></article>`).join("")}</section>
+      <section class="card" style="margin-top:22px"><header class="card-header"><div><h3>${isArabic() ? "وحدات التوسّع المخطط لها بعد الإطلاق" : "Expansion modules planned after launch"}</h3><p>${isArabic() ? "مبنية على نفس الخزنة وسلسلة التشفير وسجل الحيازة. ليست ضمن الإصدار الحالي ولا يُدّعى توفرها." : "Built on the same vault, encryption chain and custody record. Not part of the current release and not claimed as available."}</p></div>${badge(isArabic() ? "مخطط" : "Planned", "purple")}</header><div class="card-body"><div class="control-grid">${(isArabic() ? [["التدقيق المالي الرقمي", "ختم القيود والفواتير الإلكترونية وكشوف الحساب من مصدرها، وربط كل ملاحظة تدقيق بسجل مختوم.", "document"], ["التحليل الجنائي الرقمي", "ختم نسخ الأقراص والجوالات والسجلات عند الاستلام، ومطابقة بصمة الاستحواذ، وسجل حيازة حتى التقرير.", "fingerprint"], ["الاكتشاف الإلكتروني", "حجز قانوني للأشخاص المعنيين، ثم جمع وبحث ومراجعة، وتسليم مجموعة إنتاج مرقّمة ومختومة.", "search"], ["حوكمة تطوير البرمجيات بالذكاء الاصطناعي", "توثيق جلسات التطوير والموافقات والسياسات كدليل قابل للتحقق.", "sparkles"]] : [["Digital financial audit", "Seal journal entries, e-invoices and bank statements at source, and tie every audit finding to a sealed record.", "document"], ["Digital forensics", "Seal disk, phone and log images on receipt, match acquisition hashes, and keep custody through to the report.", "fingerprint"], ["eDiscovery", "Legal hold on the people involved, then collection, search and review, and a numbered, sealed production set.", "search"], ["AI development governance", "Record development sessions, approvals and policy checks as verifiable evidence.", "sparkles"]]).map(item => `<div class="control-item"><div class="control-icon">${icon(item[2])}</div><div><strong>${esc(item[0])}</strong><small>${esc(item[1])}</small></div>${badge(isArabic() ? "مخطط" : "Planned", "purple")}</div>`).join("")}</div></div></section>`, "editions");
   }
 
   const renderers = {
@@ -604,22 +605,73 @@
     return `<!doctype html><html lang="${lang}" dir="${rtl ? "rtl" : "ltr"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(labels.title)} · v${APP_VERSION}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"><style>
       :root{--ink:#07152d;--blue:#1e78ff;--line:#d9e4f0;--muted:#617086;--green:#087a55;--r-sm:10px;--r-md:14px;--r-lg:20px;--font:Inter,"IBM Plex Sans Arabic",system-ui,sans-serif;--font-ar:"IBM Plex Sans Arabic",system-ui,sans-serif}
       *{box-sizing:border-box}body{margin:0;background:#eef3f8;color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.55;font-weight:400}html[dir="rtl"] body{font-family:var(--font-ar);font-size:14.5px}.sheet{width:210mm;min-height:297mm;margin:18px auto;background:#fff;padding:16mm;box-shadow:0 16px 50px rgba(7,21,45,.16)}.header{display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:4px solid var(--blue);padding-bottom:14px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:62px;height:62px;background:var(--ink);border-radius:var(--r-md);padding:8px}.brand strong{display:block;font-size:19px;font-weight:700}.brand span{display:block;color:var(--blue);font-size:11px;font-weight:600;letter-spacing:.08em}.version{border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 11px;font-size:12px;font-weight:600}.title{margin:28px 0 18px}.title h1{font-size:25px;line-height:1.25;margin:0;font-weight:700}.title p{margin:7px 0 0;color:var(--muted);font-weight:400}.result{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#eef8f4;border:1px solid #bce4d5;border-radius:var(--r-md);padding:15px;margin-bottom:18px}.result span,.field span{display:block;color:var(--muted);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}.result strong{display:block;margin-top:4px;font-size:15px;font-weight:700;color:var(--green)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{border:1px solid var(--line);border-radius:var(--r-sm);padding:10px;break-inside:avoid}.field strong{display:block;margin-top:4px;font-weight:500;overflow-wrap:anywhere}.section{margin-top:22px;break-inside:avoid}.section h2{font-size:16px;font-weight:600;margin:0 0 9px}.hash{border-radius:var(--r-sm);background:var(--ink);color:#e6f3ff;padding:13px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;line-height:1.7;overflow-wrap:anywhere}.custody{width:100%;border-collapse:collapse}.custody th,.custody td{border:1px solid var(--line);padding:8px;text-align:start;vertical-align:top;font-size:11px;font-weight:400}.custody th{background:#f3f6fa;font-weight:600}.custody tr{break-inside:avoid}.footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px}.footer strong{color:var(--ink);font-weight:600}
-      @page{size:A4;margin:10mm}@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff}.sheet{width:auto;min-height:auto;margin:0;padding:8mm;box-shadow:none}.fields,.result,.section,.custody tr,.field{break-inside:avoid}.no-print{display:none}}
+      html[dir="rtl"] .field strong,html[dir="rtl"] .custody td{unicode-bidi:plaintext;text-align:right}@page{size:A4;margin:10mm}@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff}.sheet{width:auto;min-height:auto;margin:0;padding:8mm;box-shadow:none}.fields,.result,.section,.custody tr,.field{break-inside:avoid}.no-print{display:none}}
       </style></head><body><main class="sheet"><header class="header"><div class="brand"><img src="${esc(logoUrl)}" alt="RM"><div><strong>RM TRACEVAULT</strong><span>SECURE · TRACE · PROTECT</span></div></div><div class="version">Enterprise Demo v${APP_VERSION}</div></header><section class="title"><h1>${esc(labels.title)}</h1><p>${esc(labels.subtitle)}</p></section><section class="result"><div><span>${esc(labels.certificate)}</span><strong>CERT-${esc(evidence.id)}</strong></div><div><span>${esc(labels.result)}</span><strong>${esc(labels.verified)}</strong></div></section><section class="fields">${rows.map(([label, value]) => `<div class="field"><span>${esc(label)}</span><strong>${esc(value)}</strong></div>`).join("")}</section><section class="section"><h2>${esc(labels.fingerprint)}</h2><div class="hash">${esc(evidence.hash)}</div></section><section class="section"><h2>${esc(labels.custody)}</h2><table class="custody"><thead><tr><th>#</th><th>${rtl ? "الوقت" : "Time"}</th><th>${rtl ? "الإجراء" : "Action"}</th><th>${rtl ? "الفاعل" : "Actor"}</th><th>${rtl ? "التفاصيل" : "Detail"}</th></tr></thead><tbody>${custody.map((event, index) => `<tr><td>${index + 1}</td><td>${esc(event.time)}</td><td>${esc(event.action)}</td><td>${esc(event.actor)}</td><td>${esc(event.detail)}</td></tr>`).join("")}</tbody></table></section><footer class="footer"><div><strong>${esc(labels.footer)}</strong><br>${esc(labels.disclaimer)}</div><div>RM TraceVault · v${APP_VERSION}</div></footer></main><script>window.addEventListener("load",()=>window.setTimeout(()=>window.print(),350));<\/script></body></html>`;
+  }
+
+  function saveFile(content, type, fileName) {
+    const url = URL.createObjectURL(new Blob([content], { type }));
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = fileName;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 60000);
   }
 
   function printCertificate() {
     const evidence = selectedEvidence();
-    const printWindow = window.open("", "_blank", "noopener,noreferrer");
-    if (!printWindow) {
-      showToast(isArabic() ? "تعذر فتح نافذة الطباعة" : "Print window blocked", isArabic() ? "اسمح بالنوافذ المنبثقة لهذا الموقع ثم أعد المحاولة." : "Allow pop-ups for this site and try again.", "warning");
-      return;
+    const html = buildCertificateHtml(evidence);
+    // Open the certificate from a Blob URL. window.open with "noopener" always returns null,
+    // so the old code wrote nothing and left a blank tab. If pop-ups are blocked, save the file instead.
+    const url = URL.createObjectURL(new Blob([html], { type: "text/html;charset=utf-8" }));
+    const certificateWindow = window.open(url, "_blank");
+    if (!certificateWindow) {
+      saveFile(html, "text/html;charset=utf-8", `RM_TraceVault_Certificate_${evidence.id}_v${APP_VERSION}.html`);
+      showToast(isArabic() ? "تم حفظ الشهادة كملف" : "Certificate saved as a file", isArabic() ? "المتصفح منع النافذة الجديدة، فحفظنا الشهادة. افتحها واطبعها أو احفظها PDF." : "The browser blocked the new window, so the certificate was saved. Open it to print or save as PDF.", "download");
+    } else {
+      showToast(isArabic() ? "فُتحت الشهادة في نافذة جديدة" : "Certificate opened in a new tab", isArabic() ? `${evidence.id} · اطبعها أو احفظها PDF` : `${evidence.id} · print or save as PDF`, "download");
     }
-    printWindow.document.open();
-    printWindow.document.write(buildCertificateHtml(evidence));
-    printWindow.document.close();
+    window.setTimeout(() => URL.revokeObjectURL(url), 60000);
     logAudit("Integrity certificate opened for print", evidence.id, "Verified", "Demo Administrator");
-    showToast(isArabic() ? "تم تجهيز الشهادة" : "Certificate prepared", `${evidence.id} · v${APP_VERSION}`, "download");
+  }
+
+  function downloadEvidencePackage() {
+    const evidence = selectedEvidence();
+    const payload = {
+      package_type: "RM_TRACEVAULT_EVIDENCE_PACKAGE_DEMO",
+      demo_version: APP_VERSION,
+      generated_at: new Date().toISOString(),
+      claim_boundary: { environment: "PUBLIC_CONCEPT_DEMO", data: "FICTIONAL", production_ready: false },
+      manifest: {
+        evidence_id: evidence.id,
+        file_name: evidence.title,
+        source: evidence.source,
+        type: evidence.type,
+        size: evidence.size,
+        case_id: evidence.caseId,
+        collected: evidence.collected,
+        ingested: evidence.ingested
+      },
+      integrity: {
+        algorithm: "SHA-512",
+        sha512: evidence.hash,
+        verified: evidence.verified,
+        encryption: evidence.encryption,
+        immutable_storage: evidence.worm,
+        timestamp: evidence.timestamp
+      },
+      chain_of_custody: allCustody(evidence),
+      offline_verification: [
+        "Recompute SHA-512 of the original file and compare it with integrity.sha512.",
+        "Validate the RFC 3161 timestamp token with the timestamp authority.",
+        "Check each custody event signature against the published custody public key."
+      ]
+    };
+    saveFile(JSON.stringify(payload, null, 2), "application/json;charset=utf-8", `RM_TraceVault_Evidence_Package_${evidence.id}.json`);
+    logAudit("Evidence package generated", evidence.id, "Verified");
+    showToast(isArabic() ? "تم تنزيل حزمة الدليل" : "Evidence package downloaded", isArabic() ? `${evidence.id} · البيان والبصمة وسجل الحيازة ودليل التحقق` : `${evidence.id} · manifest, fingerprint, custody history and verification guide`, "package");
   }
 
   function guidedTour() {
@@ -671,7 +723,7 @@
       case "verify-current": verifyEvidence(); break;
       case "print-certificate": printCertificate(); break;
       case "simulate-ingestion": simulateIngestion(); break;
-      case "generate-package": logAudit("Evidence package generated", selectedEvidence().id, "Verified"); showToast(isArabic() ? "تم تجهيز حزمة الدليل" : "Evidence package prepared", "Manifest, integrity report, custody history and verification guide included.", "package"); break;
+      case "generate-package": downloadEvidencePackage(); break;
       case "security-test": showToast(isArabic() ? "اكتمل فحص الضوابط" : "Control test completed", "All represented controls returned healthy status.", "shield-check"); break;
       case "all-tests": runAllTests(); break;
       case "api-flow": runApiFlow(); break;
