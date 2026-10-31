@@ -7,6 +7,7 @@ on:
       - main
       - fix-v4-audit
       - feature-ai-development-governance
+      - align/team-guide-v4.1
 
 permissions:
   contents: read
@@ -32,4 +33,4 @@ jobs:
         run: node validate-ai-governance.js
       - name: Public-safe content scan
         run: |
-          ! grep -RniE 'MohammedAlharethi|aljeri\.com|3,160,228|6,088,968|243,529|SCCC-2465|VirtusLab|visdom-ai|tracevault\.dev' --include='*.html' --include='*.js' --include='*.css' --include='*.svg' --exclude='validate-*.js' .
+          ! grep -RniE 'MohammedAlharethi|aljeri\.com|3,160,228|6,088,968|243,529|SCCC|PCCIT|Alibaba|me-central-1|RMT-PO|Series A|\bVault Enterprise|VirtusLab|visdom-ai|tracevault\.dev' --include='*.html' --include='*.js' --include='*.css' --include='*.svg' --exclude='validate-*.js' .
