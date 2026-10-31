@@ -1,6 +1,7 @@
 const fs = require('fs');
 const vm = require('vm');
 
+const EXPECTED_VERSION = '4.1';
 const read = file => fs.readFileSync(file, 'utf8');
 const css = read('styles.css');
 const appSource = read('app.js');
@@ -64,9 +65,9 @@ for (const [index, hash] of hashes.entries()) {
 }
 
 if (!sandbox.RM_TRACEVAULT_DEMO) throw new Error('Runtime export missing');
-if (sandbox.RM_TRACEVAULT_DEMO.APP_VERSION !== '4.0') throw new Error('APP_VERSION mismatch');
+if (sandbox.RM_TRACEVAULT_DEMO.APP_VERSION !== EXPECTED_VERSION) throw new Error('APP_VERSION mismatch');
 const certificate = sandbox.RM_TRACEVAULT_DEMO.buildCertificateHtml(sandbox.TRACEVAULT_DEMO.evidence[0]);
-if (!certificate.includes('v4.0') || !certificate.includes('SHA-512') || !certificate.includes('window.print')) {
+if (!certificate.includes(`v${EXPECTED_VERSION}`) || !certificate.includes('SHA-512') || !certificate.includes('window.print')) {
   throw new Error('Printable certificate HTML is incomplete');
 }
 
@@ -86,8 +87,14 @@ const checks = {
   legacy_css_reference_absent: !index.includes('v4.css'),
   legacy_js_reference_absent: !index.includes('v4-enhancements.js'),
   font_links_present: index.includes('fonts.googleapis.com') && index.includes('IBM+Plex+Sans+Arabic'),
-  title_uses_version_constant: sandbox.document.title.endsWith('v4.0'),
-  certificate_uses_version_constant: certificate.includes('Enterprise Demo v4.0')
+  title_uses_version_constant: sandbox.document.title.endsWith(`v${EXPECTED_VERSION}`),
+  certificate_uses_version_constant: certificate.includes(`Enterprise Demo v${EXPECTED_VERSION}`),
+  team_guide_route: appSource.includes('guide: guidePage') && Array.isArray(sandbox.TRACEVAULT_DEMO.guide?.screens),
+  team_guide_screens: sandbox.TRACEVAULT_DEMO.guide?.screens?.length || 0,
+  evidence_journey_steps: sandbox.TRACEVAULT_DEMO.guide?.journey?.length || 0,
+  build_tags_known: Object.values((appSource.match(/const NAV_TAGS = (\{[^}]*\})/) || [])[1] ? Function(`return ${appSource.match(/const NAV_TAGS = (\{[^}]*\})/)[1]}`)() : {}).every(tag => tag in (sandbox.TRACEVAULT_DEMO.guide?.tags || {})),
+  packages: sandbox.TRACEVAULT_DEMO.editions.map(edition => edition.name),
+  em_dash_count: [css, appSource, dataSource, index, read('ai-governance.js'), read('ai-governance.css')].reduce((total, value) => total + (value.match(/\u2014/g) || []).length, 0)
 };
 
 if (checks.min_font_size_px < 11) throw new Error(`Minimum font size is ${checks.min_font_size_px}px`);
@@ -102,5 +109,10 @@ if (!checks.html_certificate_present || !checks.legacy_pdf_generator_absent) thr
 if (!checks.legacy_css_reference_absent || !checks.legacy_js_reference_absent) throw new Error('Legacy v4 layers are still referenced');
 if (!checks.font_links_present) throw new Error('Required web fonts are not loaded');
 if (!checks.title_uses_version_constant || !checks.certificate_uses_version_constant) throw new Error('Version is inconsistent');
+if (!checks.team_guide_route || checks.team_guide_screens < 16) throw new Error('Team Guide route or screen map is incomplete');
+if (checks.evidence_journey_steps !== 8) throw new Error(`Evidence journey must have 8 steps, found ${checks.evidence_journey_steps}`);
+if (!checks.build_tags_known) throw new Error('A navigation build tag has no legend entry in the Team Guide');
+if (checks.packages.join(',') !== 'Basic,Standard,Enterprise,Sovereign') throw new Error(`Packages must match the approved package table, found ${checks.packages.join(', ')}`);
+if (checks.em_dash_count !== 0) throw new Error(`Em dashes remain in public files: ${checks.em_dash_count}`);
 
 console.log(JSON.stringify({ status: 'PASS', ...checks }, null, 2));

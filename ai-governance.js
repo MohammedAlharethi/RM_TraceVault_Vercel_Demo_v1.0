@@ -18,11 +18,11 @@
   const I18N = {
     en: {
       nav: "AI Development Governance",
-      planned: "PLANNED",
+      planned: "Concept",
       kicker: "FUTURE PRODUCT · CONCEPT PREVIEW",
       title: "AI Development Evidence & Governance",
-      description: "A planned Saudi product module that records AI-assisted software-development activity, applies approval policies, and preserves release evidence inside RM TraceVault.",
-      disclaimerTitle: "Concept preview — not an operating monitoring service",
+      description: "A concept for a possible future module that would record AI-assisted software-development activity, apply approval policies and preserve release evidence inside RM TraceVault. It is not on the current product roadmap.",
+      disclaimerTitle: "Concept preview: not an operating monitoring service",
       disclaimer: "This public demo uses fictional sessions and simulates the target experience. No IDE agent, repository hook, policy engine, backend capture, production enforcement or live monitoring is connected.",
       startTour: "Run concept walkthrough",
       generate: "Generate demo evidence package",
@@ -51,11 +51,11 @@
     },
     ar: {
       nav: "حوكمة تطوير البرمجيات بالذكاء الاصطناعي",
-      planned: "مخطط",
+      planned: "تصوري",
       kicker: "منتج مستقبلي · عرض تصوري",
       title: "أدلة وحوكمة تطوير البرمجيات بالذكاء الاصطناعي",
-      description: "وحدة منتج سعودية مخطط لها لتوثيق أنشطة تطوير البرمجيات المدعومة بالذكاء الاصطناعي، وتطبيق سياسات الاعتماد، وحفظ أدلة الإصدارات داخل RM TraceVault.",
-      disclaimerTitle: "عرض تصوري — وليس خدمة مراقبة تشغيلية",
+      description: "تصوّر لوحدة مستقبلية محتملة توثّق أنشطة تطوير البرمجيات بمساعدة الذكاء الاصطناعي، وتطبّق سياسات الموافقة، وتحفظ أدلة الإصدارات داخل RM TraceVault. وهي ليست ضمن خارطة المنتج الحالية.",
+      disclaimerTitle: "عرض تصوري، وليس خدمة مراقبة تشغيلية",
       disclaimer: "يستخدم هذا الديمو جلسات افتراضية ويحاكي التجربة المستهدفة. لا يوجد وكيل IDE أو ربط فعلي بالمستودعات أو محرك سياسات أو خادم التقاط أو منع إنتاجي أو مراقبة مباشرة.",
       startTour: "تشغيل الجولة التصورية",
       generate: "إنشاء حزمة دليل تجريبية",
@@ -255,7 +255,7 @@
     item.type = "button";
     item.className = "nav-item aig-nav";
     item.dataset.aigRoute = ROUTE;
-    item.innerHTML = `${icon("code")}<span>${esc(tr("nav"))}</span><span class="aig-nav-tag">${esc(tr("planned"))}</span>`;
+    item.innerHTML = `${icon("code")}<span>${esc(tr("nav"))}</span><span class="nav-tag" title="${esc(tr("planned"))}">${esc(tr("planned"))}</span>`;
     if (coreAi) coreAi.insertAdjacentElement("afterend", item);
     else nav.appendChild(item);
   }

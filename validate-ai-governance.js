@@ -11,8 +11,8 @@ assert(html.includes('href="ai-governance.css"'), "index.html does not load ai-g
 assert(html.includes('src="ai-governance.js"'), "index.html does not load ai-governance.js");
 assert(js.includes('const ROUTE = "ai-development-governance"'), "custom route is missing");
 assert(js.includes('data-aig-route'), "navigation hook is missing");
-assert(js.includes('Concept preview — not an operating monitoring service'), "English claim boundary is missing");
-assert(js.includes('عرض تصوري — وليس خدمة مراقبة تشغيلية'), "Arabic claim boundary is missing");
+assert(js.includes('Concept preview: not an operating monitoring service'), "English claim boundary is missing");
+assert(js.includes('عرض تصوري، وليس خدمة مراقبة تشغيلية'), "Arabic claim boundary is missing");
 assert(js.includes('production_ready: false'), "downloadable package must deny production readiness");
 assert(js.includes('policy_enforcement: false'), "downloadable package must deny live policy enforcement");
 assert(js.includes('backend_connected: false'), "downloadable package must deny backend connectivity");
