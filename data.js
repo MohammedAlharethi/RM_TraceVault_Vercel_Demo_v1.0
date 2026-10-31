@@ -243,20 +243,20 @@ window.TRACEVAULT_DEMO = {
     {
       name: "Basic", nameAr: "الأساسية", label: "10 TB", labelAr: "10 تيرابايت",
       description: "Small and mid-size law firms.", descriptionAr: "مكاتب المحاماة الصغيرة والمتوسطة.",
-      features: ["Evidence capacity: 10 TB", "10 users and 25 guests", "No DR copy", "AI: OCR", "No API or SIEM link", "Support on business days"],
-      featuresAr: ["سعة الأدلة: 10 تيرابايت", "10 مستخدمين و25 ضيفاً", "بلا نسخة تعافٍ", "الذكاء الاصطناعي: قراءة النصوص", "بلا واجهة برمجية أو ربط SIEM", "الدعم في أيام العمل"]
+      features: ["Evidence capacity: 10 TB", "25 users and 10 guests", "No DR copy", "AI: OCR", "No API or SIEM link", "Support on business days"],
+      featuresAr: ["سعة الأدلة: 10 تيرابايت", "25 مستخدماً و10 ضيوف", "بلا نسخة تعافٍ", "الذكاء الاصطناعي: قراءة النصوص", "بلا واجهة برمجية أو ربط SIEM", "الدعم في أيام العمل"]
     },
     {
       name: "Standard", nameAr: "المعيارية", label: "100 TB", labelAr: "100 تيرابايت",
       description: "Large law firms and legal departments.", descriptionAr: "مكاتب المحاماة الكبرى والإدارات القانونية.",
-      features: ["Evidence capacity: 100 TB", "50 users and 100 guests", "DR copy as an optional add-on", "AI: OCR and classification", "Read-only API and SIEM", "Business-day support and an account manager"],
-      featuresAr: ["سعة الأدلة: 100 تيرابايت", "50 مستخدماً و100 ضيف", "نسخة التعافي إضافة اختيارية", "الذكاء الاصطناعي: قراءة النصوص والتصنيف", "واجهة برمجية وربط SIEM للقراءة فقط", "الدعم في أيام العمل ومدير حساب"]
+      features: ["Evidence capacity: 100 TB", "100 users and 50 guests", "DR copy as an optional add-on", "AI: OCR and classification", "Read-only API and SIEM", "Business-day support and an account manager"],
+      featuresAr: ["سعة الأدلة: 100 تيرابايت", "100 مستخدم و50 ضيفاً", "نسخة التعافي إضافة اختيارية", "الذكاء الاصطناعي: قراءة النصوص والتصنيف", "واجهة برمجية وربط SIEM للقراءة فقط", "الدعم في أيام العمل ومدير حساب"]
     },
     {
       name: "Enterprise", nameAr: "المؤسسية", label: "200 TB", labelAr: "200 تيرابايت",
       description: "Banks and financial institutions.", descriptionAr: "البنوك والمؤسسات المالية.",
-      features: ["Evidence capacity: 200 TB", "250 users and 500 guests", "Full DR copy", "AI: OCR, classification, personal-data detection and search", "Full API with SIEM", "Incident on-call support"],
-      featuresAr: ["سعة الأدلة: 200 تيرابايت", "250 مستخدماً و500 ضيف", "نسخة تعافٍ كاملة", "الذكاء الاصطناعي: قراءة النصوص والتصنيف وكشف البيانات الشخصية والبحث", "واجهة برمجية كاملة مع ربط SIEM", "مناوبة للحوادث"]
+      features: ["Evidence capacity: 200 TB", "500 users and 250 guests", "Full DR copy", "AI: OCR, classification, personal-data detection and search", "Full API with SIEM", "Incident on-call support"],
+      featuresAr: ["سعة الأدلة: 200 تيرابايت", "500 مستخدم و250 ضيفاً", "نسخة تعافٍ كاملة", "الذكاء الاصطناعي: قراءة النصوص والتصنيف وكشف البيانات الشخصية والبحث", "واجهة برمجية كاملة مع ربط SIEM", "مناوبة للحوادث"]
     },
     {
       name: "Sovereign", nameAr: "السيادية", label: "400 TB+", labelAr: "400 تيرابايت فأكثر",
